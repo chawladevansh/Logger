@@ -12,6 +12,8 @@ int main()
 {
     std::thread threads[10];
 
+    Logger::EnableFileOutput();
+
     for(int i = 0; i < 10; i++) {
         threads[i] = std::thread(logTest, i);
         threads[i].join();
